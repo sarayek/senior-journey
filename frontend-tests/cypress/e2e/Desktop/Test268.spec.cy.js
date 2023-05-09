@@ -1,51 +1,40 @@
 describe('test id 268 - verify Learn Overview - Breadcrumb', () => {
-  it.only('canada link - click url redirects to /en when accessing /en', () => {
-    cy.visitAndWait('/en/home')
-    cy.get('.block > :nth-child(1) > .MuiTypography-root').click()
-    cy.origin('https://www.canada.ca', () => {
-      cy.wait(3000)
-      cy.location('pathname').should('equal', '/en.html')
+  const langs = ['en', 'fr']
+  const sizes = ['macbook-13', 'macbook-11', 'macbook-16']
+
+  sizes.forEach(size => {
+    langs.forEach(lang => {
+      it(`[${lang}] - ${size} - canada link - click url redirects to /en/fr when accessing /en/fr`, () => {
+        cy.log('https://dev.azure.com/JourneyLab/SeniorsJourney/_workitems/edit/268')
+        cy.visitAndWait(`/${lang}/home`)
+          .viewport(size)
+        cy.contains('Canada.ca').click()
+        cy.origin('https://www.canada.ca', { args: { lang } }, ({ lang }) => {
+          cy.wait(3000)
+          cy.location('pathname').should('equal', `/${lang}.html`)
+        })
+      })
+
+      it(`[${lang}] - ${size} - retirement hub breadcrumb link - redirects to /en/fr when accessing /en/fr`, () => {
+        cy.visitAndWait(`/${lang}/learn/retirement-income-sources`)
+          .viewport(size)
+        cy.get('.text-sm > :nth-child(2) > .MuiTypography-root').click()
+        cy.location('pathname').should('equal', `/${lang}/home`)
+      })
+
+      it(`[${lang}] - ${size} - learn breadcrumb link - redirects to /en/fr when accessing /en/fr`, () => {
+        cy.visitAndWait(`/${lang}/learn/retirement-income-sources`)
+          .viewport(size)
+        cy.get('.text-sm > :nth-child(3) > .MuiTypography-root').click()
+        cy.location('pathname').should('equal', `/${lang}/learn`)
+      })
+
+      it(`[${lang}] - ${size} - learn breadcrumb link - redirects to /en/fr when accessing /en/fr`, () => {
+        cy.visitAndWait(`/${lang}/learn/retirement-income-sources`)
+          .viewport(size)
+        cy.get('.text-sm > :nth-child(3) > .MuiTypography-root').click()
+        cy.location('pathname').should('equal', `/${lang}/learn`)
+      })
     })
-  })
-
-  it('canada link - click url redirects to /fr when accessing /fr', () => {
-    cy.visitAndWait('/fr/home')
-    cy.get('.block > :nth-child(1) > .MuiTypography-root').click()
-    cy.origin('https://www.canada.ca', () => {
-      cy.wait(3000)
-      cy.location('pathname').should('equal', '/fr.html')
-    })
-  })
-
-  it('learn link - retirement-income-sources redirects to /en when accessing /en', () => {
-    cy.visitAndWait('/en/learn/retirement-income-sources')
-    cy.location('pathname').should('equal', '/en/learn/retirement-income-sources')
-  })
-
-  it('learn link - retirement-income-sources redirects to /fr when accessing /fr', () => {
-    cy.visitAndWait('/fr/learn/retirement-income-sources')
-    cy.location('pathname').should('equal', '/fr/learn/retirement-income-sources')
-  })
-
-  it('learn link - redirects to /en when accessing /en', () => {
-    cy.visitAndWait('/en/learn/retirement-income-sources')
-    cy.get('.block > :nth-child(2) > .MuiTypography-root').click()
-    cy.location('pathname').should('equal', '/en/learn')
-  })
-
-  it('learn link - planning-to-save-for-retirement redirects to /en when accessing /en', () => {
-    cy.visitAndWait('/en/learn/planning-to-save-for-retirement')
-    cy.location('pathname').should('equal', '/en/learn/planning-to-save-for-retirement')
-  })
-
-  it('learn link - planning-to-save-for-retirement redirects to /fr when accessing /fr', () => {
-    cy.visitAndWait('/fr/learn/planning-to-save-for-retirement')
-    cy.location('pathname').should('equal', '/fr/learn/planning-to-save-for-retirement')
-  })
-
-  it('learn link - redirects to /fr when accessing /fr', () => {
-    cy.visitAndWait('/fr/learn/retirement-income-sources')
-    cy.get('.block > :nth-child(2) > .MuiTypography-root').click()
-    cy.location('pathname').should('equal', '/fr/learn')
   })
 })
