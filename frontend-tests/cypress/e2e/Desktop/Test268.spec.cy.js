@@ -22,6 +22,13 @@ describe('test id 268 - verify Learn Overview - Breadcrumb', () => {
         cy.location('pathname').should('equal', `/${lang}/home`)
       })
 
+      it(`[${lang}] - ${size} - retirement hub breadcrumb link - redirects to /en/fr when accessing /en/fr`, () => {
+        cy.visitAndWait(`/${lang}/learn/planning-to-save-for-retirement`)
+          .viewport(size)
+        cy.get('.text-sm > :nth-child(2) > .MuiTypography-root').click()
+        cy.location('pathname').should('equal', `/${lang}/home`)
+      })
+
       it(`[${lang}] - ${size} - learn breadcrumb link - redirects to /en/fr when accessing /en/fr`, () => {
         cy.visitAndWait(`/${lang}/learn/retirement-income-sources`)
           .viewport(size)
@@ -30,7 +37,7 @@ describe('test id 268 - verify Learn Overview - Breadcrumb', () => {
       })
 
       it(`[${lang}] - ${size} - learn breadcrumb link - redirects to /en/fr when accessing /en/fr`, () => {
-        cy.visitAndWait(`/${lang}/learn/retirement-income-sources`)
+        cy.visitAndWait(`/${lang}/learn/planning-to-save-for-retirement`)
           .viewport(size)
         cy.get('.text-sm > :nth-child(3) > .MuiTypography-root').click()
         cy.location('pathname').should('equal', `/${lang}/learn`)
