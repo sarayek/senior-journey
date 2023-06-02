@@ -13,28 +13,20 @@
             "content": "Le tableau montre l'évolution des paiements mensuels pour les personnes qui travaillent pendant trois ans après avoir commencé à recevoir leur pension de retraite du RPC. Il montre que des PAR sont ajoutés chaque année à vos pensions de retraite du RPC après que vous ayez continué à travailler et à cotiser au régime.",
             "header": "Description"
           },
-          "header": [
-            "Années de cotisations au RCP et le début de votre pension",
-            "Retraite du RPC",
-            "PAR 1",
-            "PAR 2",
-            "PAR 3",
-            "Total"
-          ],
-          "rows": [
-            {
-              "data": ["Au début de votre pension", "836\u00a0$", "-", "-", "-", "836\u00a0$"]
-            },
-            {
-              "data": ["1 an,", "836\u00a0$", "29\u00a0$", "-", "-", "865\u00a0$"]
-            },
-            {
-              "data": ["2 ans", "836\u00a0$", "29\u00a0$", "31\u00a0$", "-", "896\u00a0$"]
-            },
-            {
-              "data": ["3 ans", "836\u00a0$", "29\u00a0$", "31\u00a0$", "35\u00a0$", "931\u00a0$"]
-            }
-          ],
+          "header": {
+            "number-of-years": "Années de cotisations au RCP et le début de votre pension",
+            "cpp-retirement": "Retraite du RPC",
+            "prb-1": "PAR 1",
+            "prb-2": "PAR 2",
+            "prb-3": "PAR 3",
+            "total": "Total"
+          },
+          "data": {
+            "year-you-start": "Au début de votre pension",
+            "1-year": "1 an",
+            "2-year": "2 ans",
+            "3-years": "3 ans"
+          },
           "values-heading": "Valeurs"
         },
         "footer": "Les PAR sont ajoutés chaque année à vos pensions de retraite du RPC, après que vous ayez continué à travailler et à contribuer au régime.",

@@ -13,28 +13,20 @@
             "content": "The chart shows changes in monthly payments for people who work for 3 years after starting their CPP retirement pension. It shows that PRBs are added every year to your CPP retirement pensions after you continue working and contributing to the plan.",
             "header": "Description"
           },
-          "header": [
-            "Number of years you contribute to CPP after starting your pension",
-            "CPP retirement",
-            "PRB 1",
-            "PRB 2",
-            "PRB 3",
-            "Total"
-          ],
-          "rows": [
-            {
-              "data": ["Year you start your pension", "$836", "-", "-", "-", "$836"]
-            },
-            {
-              "data": ["1 year", "$836", "$29", "-", "-", "$865"]
-            },
-            {
-              "data": ["2 years", "$836", "$29", "$31", "-", "$896"]
-            },
-            {
-              "data": ["3 years", "$836", "$29", "$31", "$35", "$931"]
-            }
-          ],
+          "header": {
+            "number-of-years": "Number of years you contribute to CPP after starting your pension",
+            "cpp-retirement": "CPP retirement",
+            "prb-1": "PRB 1",
+            "prb-2": "PRB 2",
+            "prb-3": "PRB 3",
+            "total": "Total"
+          },
+          "data": {
+            "year-you-start": "Year you start your pension",
+            "1-year": "1 year",
+            "2-year": "2 years",
+            "3-years": "3 years"
+          },
           "values-heading": "Values"
         },
         "footer": "The PRBs are added every year to your CPP retirement pensions after you continue working and contributing to the plan.",

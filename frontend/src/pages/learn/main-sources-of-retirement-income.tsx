@@ -14,6 +14,7 @@ import AccessibilityGraphContainer from '../../components/AccessibilityGraphCont
 import AlertCard from '../../components/AlertCard'
 import { LearnPageLayout } from '../../components/LearnPageLayout'
 import theme from '../../theme'
+import { intlUtils } from '../../utils/intl-utils'
 import { getDCTermsTitle } from '../../utils/seo-utils'
 
 const MainSourcesOfRetirementIncome: FC = () => {
@@ -24,7 +25,7 @@ const MainSourcesOfRetirementIncome: FC = () => {
 
   const mobile = useMediaQuery(theme.breakpoints.down('sm'))
 
-  function getImageSrc(imagePrefix: string, extension: string = "jpg") {
+  function getImageSrc(imagePrefix: string, extension: string = 'jpg') {
     return `/assets/${imagePrefix}-${mobile ? 'mobile' : 'desktop'}-${locale ?? 'en'}.${extension}`
   }
 
@@ -348,9 +349,59 @@ const MainSourcesOfRetirementIncome: FC = () => {
           {t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.footer')}
         </p>
         <AccessibilityGraphContainer
-          tableData={t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility', {
-            returnObjects: true,
-          })}
+          tableData={{
+            caption: t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.caption'),
+            header: [
+              t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.header.number-of-years'),
+              t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.header.cpp-retirement'),
+              t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.header.prb-1'),
+              t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.header.prb-2'),
+              t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.header.prb-3'),
+              t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.header.total'),
+            ],
+            rows: [
+              {
+                data: [
+                  t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.data.year-you-start'),
+                  intlUtils.formatCurrency(836, locale),
+                  '-',
+                  '-',
+                  '-',
+                  intlUtils.formatCurrency(836, locale),
+                ],
+              },
+              {
+                data: [
+                  t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.data.1-year'),
+                  intlUtils.formatCurrency(836, locale),
+                  intlUtils.formatCurrency(29, locale),
+                  '-',
+                  '-',
+                  intlUtils.formatCurrency(865, locale),
+                ],
+              },
+              {
+                data: [
+                  t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.data.2-year'),
+                  intlUtils.formatCurrency(836, locale),
+                  intlUtils.formatCurrency(29, locale),
+                  intlUtils.formatCurrency(31, locale),
+                  '-',
+                  intlUtils.formatCurrency(896, locale),
+                ],
+              },
+              {
+                data: [
+                  t('canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.data.3-years'),
+                  intlUtils.formatCurrency(836, locale),
+                  intlUtils.formatCurrency(29, locale),
+                  intlUtils.formatCurrency(31, locale),
+                  intlUtils.formatCurrency(35, locale),
+                  intlUtils.formatCurrency(931, locale),
+                ],
+              },
+            ],
+          }}
           description={t(
             'canada-pension-plan-program.cpp-post-retirement-benefit.chart.accessibility.description.content'
           )}
@@ -394,8 +445,12 @@ const MainSourcesOfRetirementIncome: FC = () => {
               primary: t('canada-pension-plan-program.cpp-post-retirement-benefit.helpful-resources.cpp.content'),
             },
             {
-              href: t('canada-pension-plan-program.cpp-post-retirement-benefit.helpful-resources.stop-contributing.link'),
-              primary: t('canada-pension-plan-program.cpp-post-retirement-benefit.helpful-resources.stop-contributing.content'),
+              href: t(
+                'canada-pension-plan-program.cpp-post-retirement-benefit.helpful-resources.stop-contributing.link'
+              ),
+              primary: t(
+                'canada-pension-plan-program.cpp-post-retirement-benefit.helpful-resources.stop-contributing.content'
+              ),
             },
           ].map(({ href, primary }) => (
             <li key={primary}>
