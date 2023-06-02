@@ -23,16 +23,16 @@
           ],
           "rows": [
             {
-              "data": ["Au début de votre pension", "836\u00a0$", "-", "-", "-", "836\u00a0$"]
+              "data": ["Au début de votre pension", "[[836]]", "-", "-", "-", "[[836]]"]
             },
             {
-              "data": ["1 an,", "836\u00a0$", "29\u00a0$", "-", "-", "865\u00a0$"]
+              "data": ["1 an,", "[[836]]", "[[29]]", "-", "-", "[[865]]"]
             },
             {
-              "data": ["2 ans", "836\u00a0$", "29\u00a0$", "31\u00a0$", "-", "896\u00a0$"]
+              "data": ["2 ans", "[[836]]", "[[29]]", "[[31]]", "-", "[[896]]"]
             },
             {
-              "data": ["3 ans", "836\u00a0$", "29\u00a0$", "31\u00a0$", "35\u00a0$", "931\u00a0$"]
+              "data": ["3 ans", "[[836]]", "[[29]]", "[[31]]", "[[35]]", "[[931]]"]
             }
           ],
           "values-heading": "Valeurs"
@@ -94,7 +94,7 @@
         "content": "Il se peut que vous ayez des <a>crédits de pension</a> de votre ancien partenaire suite à un divorce ou une séparation.",
         "link": "https://www.canada.ca/fr/services/prestations/pensionspubliques/rpc/rpc-partage-credits.html"
       },
-      "worked-in-canada": "Si vous avez travaillé au Canada et que vos revenus autonome supérieurs à 3\u00a0500\u00a0$, vous et votre employeur avez contribué au RPC. Si vous étiez travailleur indépendant, et que vous avez cotisé à la fois pour l'employeur et pour l'employé. Les cotisations sont basées sur vos revenus, dans la limite d'un plafond annuel."
+      "worked-in-canada": "Si vous avez travaillé au Canada et que vos revenus autonome supérieurs à [[3500]], vous et votre employeur avez contribué au RPC. Si vous étiez travailleur indépendant, et que vous avez cotisé à la fois pour l'employeur et pour l'employé. Les cotisations sont basées sur vos revenus, dans la limite d'un plafond annuel."
     }
   },
   "guaranteed-income-supplement": {

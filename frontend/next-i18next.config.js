@@ -1,5 +1,7 @@
 // @ts-check
 
+const { currencyPostProcessor } = require('./src/i18next-currency-pre-processing')
+
 /**
  * @type {import('next-i18next').UserConfig}
  **/
@@ -10,13 +12,13 @@ module.exports = {
     defaultLocale: 'default',
   },
   /** To avoid issues when deploying to some paas (vercel...) */
-  localePath:
-    typeof window === 'undefined'
-      ? require('path').resolve('./public/locales')
-      : '/locales',
+  localePath: typeof window === 'undefined' ? require('path').resolve('./public/locales') : '/locales',
   returnNull: false,
   react: {
     transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'b', 'em'],
   },
   reloadOnPrerender: process.env.NODE_ENV === 'development',
+  serializeConfig: false,
+  use: [currencyPostProcessor],
+  postProcess: ['currency'],
 }

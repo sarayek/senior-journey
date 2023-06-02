@@ -23,16 +23,16 @@
           ],
           "rows": [
             {
-              "data": ["Year you start your pension", "$836", "-", "-", "-", "$836"]
+              "data": ["Year you start your pension", "[[836]]", "-", "-", "-", "[[836]]"]
             },
             {
-              "data": ["1 year", "$836", "$29", "-", "-", "$865"]
+              "data": ["1 year", "[[836]]", "[[29]]", "-", "-", "[[865]]"]
             },
             {
-              "data": ["2 years", "$836", "$29", "$31", "-", "$896"]
+              "data": ["2 years", "[[836]]", "[[29]]", "[[31]]", "-", "[[896]]"]
             },
             {
-              "data": ["3 years", "$836", "$29", "$31", "$35", "$931"]
+              "data": ["3 years", "[[836]]", "[[29]]", "[[31]]", "[[35]]", "[[931]]"]
             }
           ],
           "values-heading": "Values"
@@ -94,7 +94,7 @@
         "content": "You may have <a>pension credits</a> from a former partner as part of a divorce or separation.",
         "link": "https://www.canada.ca/en/services/benefits/publicpensions/cpp/cpp-split-credits.html"
       },
-      "worked-in-canada": "If you worked in Canada, and had earnings more than $3,500, you and your employer contributed to the CPP. If you were self-employed, you made contributions for both the employer and employee. Contributions are based on your earnings, up to an annual limit."
+      "worked-in-canada": "If you worked in Canada, and had earnings more than [[3500]], you and your employer contributed to the CPP. If you were self-employed, you made contributions for both the employer and employee. Contributions are based on your earnings, up to an annual limit."
     }
   },
   "guaranteed-income-supplement": {
